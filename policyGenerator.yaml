@@ -1,0 +1,66 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-acs-sensor
+placementBindingDefaults:
+  name: binding-policy-acs-sensor
+policyDefaults:
+  categories:
+    - CM Configuration Management
+  controls: 
+    - CM-2 Baseline Configuration
+  namespace: policies
+  policySets:
+    - acs-sensor-policy-set
+  remediationAction: enforce
+  severity: medium
+  standards:
+    - NIST SP 800-53
+policies:
+# ACS Policies - start
+- name: policy-acs-operator
+  categories:
+    - SI System and Information Integrity
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
+    - path: input/acs-operator.yaml
+  policySets:
+    - acs-sensor-policy-set
+- name: policy-acs-secrets
+  categories:
+    - SI System and Information Integrity
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
+    - path: input-sensor/policy-acs-secrets.yaml
+  policySets:
+    - acs-sensor-policy-set
+- name: policy-acs-sync-resources
+  categories:
+    - SI System and Information Integrity
+  consolidateManifests: false
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
+    - path: input-sensor/policy-acs-sync-resources.yaml
+  policySets:
+    - acs-sensor-policy-set
+- name: policy-advanced-managed-cluster-status
+  categories:
+    - SI System and Information Integrity
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
+    - path: input-sensor/policy-advanced-managed-cluster-status.yaml
+  policySets:
+    - acs-sensor-policy-set
+  remediationAction: inform
+# ACS Policies - end
+policySets:
+  - description: The ACS Sensor policy set applies a few policies
+      that will install the ACS Sensor components using best practices
+      that allow them to connect to ACS Central Endpoint. 
+    name: acs-sensor-policy-set
+    placement:
+      placementPath: input/acs-managed-clusters-placement.yaml

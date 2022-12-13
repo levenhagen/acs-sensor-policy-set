@@ -1,0 +1,34 @@
+---
+apiVersion: platform.stackrox.io/v1alpha1
+kind: SecuredCluster
+metadata:
+  name: stackrox-secured-cluster-services
+  namespace: stackrox
+spec:
+  clusterName: |
+    {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
+  auditLogs:
+    collection: Auto
+  centralEndpoint: |
+    {{ fromSecret "stackrox" "acs-central-endpoint" "endpoint" | base64dec }}
+  admissionControl:
+    listenOnCreates: false
+    listenOnEvents: true
+    listenOnUpdates: false
+  perNode:
+    collector:
+      collection: KernelModule
+      imageFlavor: Regular
+    taintToleration: TolerateTaints
+---
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: acs
+spec:
+  applicationMenu:
+    section: Red Hat applications
+    imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
+  href: '{{ fromSecret "stackrox" "acs-central-endpoint" "UI" | base64dec }}'
+  location: ApplicationMenu
+  text: 'Red Hat Advanced Cluster Security for Kubernetes'
