@@ -14,4 +14,4 @@ This is a attempt to have a policy to
 
 PS: This policySet will target every cluster in RHACM. If you don't want a given cluster to be tracked, apply the following label to it: "acscs=Skip"
 
-Future improvements: automate the process of creating the secrets to every managed cluster in RHACM.
+Future improvements: automate the process of creating and propagating the secrets from steps 3 and 4 to every managed cluster in RHACM.
