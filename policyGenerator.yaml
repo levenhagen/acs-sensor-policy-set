@@ -24,6 +24,15 @@ policies:
   controls:
     - SI-5 Security Alerts Advisories and Directives
   manifests:
+    - path: input/acs-managed-clusters-placement.yaml
+  policySets:
+    - acs-sensor-policy-set
+- name: policy-acs-operator
+  categories:
+    - SI System and Information Integrity
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
     - path: input/acs-operator.yaml
   policySets:
     - acs-sensor-policy-set
