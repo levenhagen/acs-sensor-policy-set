@@ -10,7 +10,7 @@ spec:
   auditLogs:
     collection: Auto
   centralEndpoint: |
-    {{ fromSecret "stackrox" "acs-central-endpoint" "endpoint" | base64dec }}
+    {{ hub fromSecret "policies" "acs-central-endpoint" "endpoint" hub | base64dec }}
   admissionControl:
     listenOnCreates: false
     listenOnEvents: true
@@ -29,6 +29,6 @@ spec:
   applicationMenu:
     section: Red Hat applications
     imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
-  href: '{{ fromSecret "stackrox" "acs-central-endpoint" "UI" | base64dec }}'
+  href: '{{hub fromSecret "policies" "acs-central-endpoint" "UI" hub | base64dec }}'
   location: ApplicationMenu
   text: 'Red Hat Advanced Cluster Security for Kubernetes'
