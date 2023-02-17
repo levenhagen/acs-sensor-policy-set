@@ -5,12 +5,10 @@ metadata:
   name: stackrox-secured-cluster-services
   namespace: rhacs-operator
 spec:
-  clusterName: |
-    {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
+  clusterName: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'
   auditLogs:
     collection: Auto
-  centralEndpoint: |
-    {{ hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" hub | base64dec }}
+  centralEndpoint: '{{ hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" hub | base64dec }}'
   admissionControl:
     listenOnCreates: false
     listenOnEvents: true
