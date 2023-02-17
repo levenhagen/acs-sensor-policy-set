@@ -3,7 +3,7 @@ apiVersion: platform.stackrox.io/v1alpha1
 kind: SecuredCluster
 metadata:
   name: stackrox-secured-cluster-services
-  namespace: stackrox
+  namespace: rhacs-operator
 spec:
   clusterName: |
     {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
