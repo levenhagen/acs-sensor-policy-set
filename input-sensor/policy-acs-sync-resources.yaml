@@ -8,7 +8,7 @@ spec:
   clusterName: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'
   auditLogs:
     collection: Auto
-  centralEndpoint: '{{ hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" hub | base64dec }}'
+  centralEndpoint: '{{ hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" | base64dec hub }}'
   admissionControl:
     listenOnCreates: false
     listenOnEvents: true
@@ -27,6 +27,6 @@ spec:
   applicationMenu:
     section: Red Hat applications
     imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
-  href: '{{hub fromSecret "policies" "acs-central-endpoint" "UI" hub | base64dec }}'
+  href: '{{hub fromSecret "policies" "acs-central-endpoint" "UI" | base64dec hub}}'
   location: ApplicationMenu
   text: 'Red Hat Advanced Cluster Security for Kubernetes'
