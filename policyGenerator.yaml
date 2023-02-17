@@ -9,7 +9,6 @@ policyDefaults:
     - CM Configuration Management
   controls: 
     - CM-2 Baseline Configuration
-  namespace: policies
   policySets:
     - acs-sensor-policy-set
   remediationAction: enforce
