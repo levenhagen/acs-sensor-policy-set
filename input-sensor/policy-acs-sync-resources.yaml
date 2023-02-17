@@ -27,6 +27,6 @@ spec:
   applicationMenu:
     section: Red Hat applications
     imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
-  href: '{{hub fromSecret "rhacs-operator" "acs-central-endpoint" "UI" | base64dec hub}}'
+  href: '{{hub fromSecret "rhacs-operator" "acs-central-endpoint" "UI" hub}}'
   location: ApplicationMenu
   text: 'Red Hat Advanced Cluster Security for Kubernetes'
