@@ -4,6 +4,11 @@ kind: Namespace
 metadata:
   name: rhacs-operator
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: policies
+---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
