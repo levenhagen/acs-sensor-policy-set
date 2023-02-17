@@ -8,7 +8,7 @@ spec:
   clusterName: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'
   auditLogs:
     collection: Auto
-  centralEndpoint: '{{ hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" | base64dec hub }}'
+  centralEndpoint: '{{hub fromSecret "rhacs-operator" "acs-central-endpoint" "endpoint" | base64dec hub}}'
   admissionControl:
     listenOnCreates: false
     listenOnEvents: true
