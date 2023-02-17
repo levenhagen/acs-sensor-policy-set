@@ -16,7 +16,6 @@ policyDefaults:
   severity: medium
   standards:
     - NIST SP 800-53
-orderPolicies: true
 policies:
 # ACS Policies - start
 - name: policy-acs-operator
