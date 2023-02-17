@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sensor
-  namespace: stackrox
+  namespace: rhacs-operator
 status:
   conditions:
     - status: "True"
@@ -12,6 +12,6 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: collector
-  namespace: stackrox
+  namespace: rhacs-operator
 status:
   numberMisscheduled: 0
