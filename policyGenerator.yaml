@@ -27,15 +27,15 @@ policies:
     - path: input/acs-operator.yaml
   policySets:
     - acs-sensor-policy-set
-#- name: policy-acs-secrets
-#  categories:
-#    - SI System and Information Integrity
-#  controls:
-#    - SI-5 Security Alerts Advisories and Directives
-#  manifests:
-#    - path: input-sensor/policy-acs-secrets.yaml
-#  policySets:
-#    - acs-sensor-policy-set
+- name: policy-acs-secrets
+  categories:
+    - SI System and Information Integrity
+  controls:
+    - SI-5 Security Alerts Advisories and Directives
+  manifests:
+    - path: input-sensor/policy-acs-secrets.yaml
+  policySets:
+    - acs-sensor-policy-set
 #- name: policy-acs-sync-resources
 #  categories:
 #    - SI System and Information Integrity
