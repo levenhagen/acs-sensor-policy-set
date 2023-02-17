@@ -2,7 +2,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
   name: placement-acs-managed-clusters
-  namespace: policies
+  namespace: rhacs-operator
 spec:
   predicates:
   - requiredClusterSelector:
