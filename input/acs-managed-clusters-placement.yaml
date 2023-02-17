@@ -9,4 +9,4 @@ spec:
       labelSelector:
         matchExpressions:
           - {key: vendor, operator: In, values: ["OpenShift"]}
-#          - {key: acscs, operator: NotIn, values: ["Skip"]}
+          - {key: acscs, operator: NotIn, values: ["Skip"]}
