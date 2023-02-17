@@ -5,6 +5,7 @@ metadata:
 placementBindingDefaults:
   name: binding-policy-acs-sensor
 policyDefaults:
+  namespace: rhacs-operator
   categories:
     - CM Configuration Management
   controls: 
