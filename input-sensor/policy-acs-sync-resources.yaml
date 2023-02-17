@@ -19,14 +19,14 @@ spec:
       imageFlavor: Regular
     taintToleration: TolerateTaints
 ---
-apiVersion: console.openshift.io/v1
-kind: ConsoleLink
-metadata:
-  name: acs
-spec:
-  applicationMenu:
-    section: Red Hat applications
-    imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
-  href: '{{hub fromSecret "rhacs-operator" "acs-central-endpoint" "UI" | base64dec hub}}'
-  location: ApplicationMenu
-  text: 'Red Hat Advanced Cluster Security for Kubernetes'
+#apiVersion: console.openshift.io/v1
+#kind: ConsoleLink
+#metadata:
+#  name: acs
+#spec:
+#  applicationMenu:
+#    section: Red Hat Applications
+#    imageURL: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/OpenShift-LogoType.svg'
+#  href: ''{{hub fromSecret "rhacs-operator" "acs-central-endpoint" "UI" | base64dec hub}}''
+#  location: ApplicationMenu
+#  text: Red Hat Advanced Cluster Security for Kubernetes
